@@ -1,0 +1,31 @@
+.site_top{
+    background-color: black;
+    height: 107px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 45px;
+    padding-right: 45px;
+    
+}
+.Logo{
+    font-family: 'Logofont';
+    font-size: 40px;
+}
+.About_us{
+    font-family: 'Aboutfont';
+    font-size: 20px;
+}
+.contacts{
+    font-size: 24px;
+}
+@font-face {
+    font-family: Logofont;
+    src: url(fonts/Langar-Regular.ttf);
+}
+@font-face {
+    font-family: Aboutfont;
+    src: url(fonts/RubikGlitch-Regular.ttf);
+}
