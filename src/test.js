@@ -1,5 +1,5 @@
 export function handleButtonClick() {
-    fetch('http://localhost:3001/api/data')
+    fetch('http://213.159.208.225:3001/api/data')
         .then(response => response.json())
         .then(data => {
             const productContainer = document.getElementById('productContainer');
@@ -129,7 +129,7 @@ export function savePages(){
   
 }
 export function registerUser(login, password) {
-  fetch('http://localhost:3001/api/registration', {
+  fetch('http://213.159.208.225:3001/api/registration', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ export function registrationform(){
   
 }
 export function loginUser(login, password) {
-  fetch('http://localhost:3001/api/login', {
+  fetch('http://213.159.208.225:3001/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -322,7 +322,7 @@ async function updateCartItems(updatedCartItems) {
 
   for (const productId of updatedCartItems) {
     try {
-      const response = await fetch(`http://localhost:3001/api/corzina/${productId}`);
+      const response = await fetch(`http://213.159.208.225:3001/api/corzina/${productId}`);
       if (response.ok) {
         const product = await response.json();
 
@@ -378,7 +378,7 @@ async function displayCartItems() {
 
   for (const productId of cartItems) {
     try {
-      const response = await fetch(`http://localhost:3001/api/corzina/${productId}`);
+      const response = await fetch(`http://213.159.208.225:3001/api/corzina/${productId}`);
       if (response.ok) {
         const product = await response.json();
 
@@ -424,7 +424,7 @@ function setCartItems(cartItems) {
 function fetchProducts(gender, category) {
   const sortedCloth = document.getElementById('SortedCloth');
 
-  fetch('http://localhost:3001/api/products?gender=' + gender + '&category=' + category)
+  fetch('http://213.159.208.225:3001/api/products?gender=' + gender + '&category=' + category)
     .then(response => {
       if (response.ok) {
         return response.json();
@@ -534,7 +534,7 @@ function createTableRow(product) {
 // Function to delete a product
 async function deleteProduct(id) {
   try {
-    const response = await fetch(`http://localhost:3001/api/adminpanel/${id}`, {
+    const response = await fetch(`http://213.159.208.225:3001/api/adminpanel/${id}`, {
       method: 'DELETE',
     });
     
@@ -552,7 +552,7 @@ async function deleteProduct(id) {
 // Function to fetch and display products
 async function afetchProducts() {
   try {
-    const response = await fetch('http://localhost:3001/api/adminpanel');
+    const response = await fetch('http://213.159.208.225:3001/api/adminpanel');
     
     if (response.ok) {
       const products = await response.json();
@@ -597,7 +597,7 @@ export function addProduct() {
     const path = `images/${generateRandomFilename()}.png`; // Generated filename for the image
 
     // Send the data to the API
-    fetch('http://localhost:3001/api/adminpanel', {
+    fetch('http://213.159.208.225:3001/api/adminpanel', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -615,7 +615,7 @@ export function addProduct() {
             path: path.substring(7), // Remove the 'images/' prefix
           };
         
-          return fetch("http://localhost:3001/api/saveimage", {
+          return fetch("http://213.159.208.225:3001/api/saveimage", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
