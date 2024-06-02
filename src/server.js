@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const { Pool } = require('pg');
 const corsOptions = {
-  origin: 'http://localhost:3000' // Замените на свой домен
+  origin: 'http://213.159.208.225:3000' // Замените на свой домен
 };
 
 const pool = new Pool({
